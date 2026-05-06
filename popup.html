@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>도파민 멈춰!</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="header">
+    <h1>도파민 멈춰!</h1>
+    <span id="status-badge" class="status-badge active">활성</span>
+  </div>
+
+  <div class="section">
+    <div class="section-title">오늘 사용량</div>
+    <div class="stat-row">
+      <span class="stat-label">누적 사용</span>
+      <span class="stat-value" id="daily-total">—</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">일일 한도</span>
+      <span class="stat-value" id="daily-limit">—</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">남은 시간</span>
+      <span class="stat-value" id="remaining">—</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">현재 세션</div>
+    <div class="stat-row">
+      <span class="stat-label">이번 세션</span>
+      <span class="stat-value" id="session-time">—</span>
+    </div>
+    <div id="block-reason" class="block-reason" style="display:none"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">설정 잠금</div>
+    <div class="lock-info" id="lock-info">—</div>
+  </div>
+
+  <button class="open-options" id="open-options">설정 열기</button>
+
+  <script src="popup.js"></script>
+</body>
+</html>

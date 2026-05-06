@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>도파민 멈춰! — 차단됨</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F7F8F3;
+      --surface: #FFFFFF;
+      --surface2: #F0F4EE;
+      --border: #E5E7EB;
+      --text: #1F2937;
+      --muted: #6B7280;
+      --accent: #16A34A;
+      --accent-dark: #166534;
+      --locked: #9CA3AF;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      gap: 1.25rem;
+    }
+
+    .icon { font-size: 3.25rem; line-height: 1; }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      line-height: 1.35;
+      max-width: min(92vw, 28rem);
+    }
+
+    .todo {
+      text-align: left;
+      max-width: min(92vw, 28rem);
+      width: 100%;
+      background: var(--surface);
+      border-radius: 10px;
+      padding: 1.15rem 1.25rem 1.15rem 1.5rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+
+    .todo-heading {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.65rem;
+      color: var(--muted);
+    }
+
+    .todo ol {
+      padding-left: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      font-size: 13px;
+      line-height: 1.45;
+      color: var(--text);
+    }
+
+    .footer-line {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--accent-dark);
+      max-width: min(92vw, 28rem);
+      line-height: 1.45;
+    }
+
+    .hint {
+      font-size: 12px;
+      color: var(--muted);
+      max-width: min(92vw, 28rem);
+      line-height: 1.6;
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+      margin-top: 0.25rem;
+    }
+
+    #unblock-countdown {
+      font-size: 13px;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+    }
+  </style>
+</head>
+<body>
+  <div class="icon">🚫</div>
+  <h1 id="block-title">오늘 한도를 모두 사용했습니다.</h1>
+  <div class="todo">
+    <p class="todo-heading">지금 할 일:</p>
+    <ol>
+      <li>물 한 잔 마시기</li>
+      <li>작업 로그 3줄 작성하기</li>
+      <li>10분 산책하기</li>
+      <li>보고 싶은 영상은 메모장에 링크만 저장하기</li>
+    </ol>
+  </div>
+  <p id="block-footer" class="footer-line">영상은 내일 다시 확인하세요.</p>
+  <p id="unblock-countdown"></p>
+  <p class="hint">
+    이 화면은 설계 의도에 따라 해제 버튼이 없습니다.<br>
+    차단 조건이 해제되면 자동으로 복구됩니다.
+  </p>
+  <script src="blocked.js"></script>
+</body>
+</html>
